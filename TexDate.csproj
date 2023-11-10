@@ -35,29 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AtkSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\AtkSharp.3.22.25.56\lib\netstandard2.0\AtkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="CairoSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\CairoSharp.3.22.25.56\lib\netstandard2.0\CairoSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GdkSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GdkSharp.3.22.25.56\lib\netstandard2.0\GdkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GioSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GioSharp.3.22.25.56\lib\netstandard2.0\GioSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GLibSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GLibSharp.3.22.25.56\lib\netstandard2.0\GLibSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="GtkSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\GtkSharp.3.22.25.56\lib\netstandard2.0\GtkSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoGame.Framework, Version=3.8.0.5, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\MonoGame.Framework.Gtk.3.8.0.5\lib\netstandard2.0\MonoGame.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="PangoSharp, Version=3.22.25.56, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\PangoSharp.3.22.25.56\lib\netstandard2.0\PangoSharp.dll</HintPath>
+    <Reference Include="MonoGame.Framework, Version=3.7.200.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Ryan.MonoGame.Framework.DesktopGL.3.7.200\lib\net452\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,27 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Loads.cs" />
+    <Compile Include="ExampleDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TexMain.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <Compile Include="Utils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="packages\GtkSharp.3.22.25.56\build\GtkSharp.targets" Condition="Exists('packages\GtkSharp.3.22.25.56\build\GtkSharp.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\GtkSharp.3.22.25.56\build\GtkSharp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\GtkSharp.3.22.25.56\build\GtkSharp.targets'))" />
-    <Error Condition="!Exists('packages\MonoGame.Framework.Gtk.3.8.0.5\build\MonoGame.Framework.Gtk.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MonoGame.Framework.Gtk.3.8.0.5\build\MonoGame.Framework.Gtk.targets'))" />
-  </Target>
-  <Import Project="packages\MonoGame.Framework.Gtk.3.8.0.5\build\MonoGame.Framework.Gtk.targets" Condition="Exists('packages\MonoGame.Framework.Gtk.3.8.0.5\build\MonoGame.Framework.Gtk.targets')" />
 </Project>

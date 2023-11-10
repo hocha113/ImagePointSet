@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Config>
-	<OutPath>1</OutPath>
-	<InportPath>2</InportPath>
+	<OutPath>-1</OutPath>
+	<InportPath>-1</InportPath>
 </Config>
